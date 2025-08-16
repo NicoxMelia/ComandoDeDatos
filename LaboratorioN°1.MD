@@ -110,3 +110,30 @@ f. El fenómeno descrito anteriormente:
 - ¿Afecta a las transmisiones por fibra óptica?
 
 > Muy poco afectadas en términos de distancia (la atenuación típica es de 0.2 dB/km), ya que la luz viaja confinada en el núcleo de la fibra, con pérdidas mínimas.
+
+### Consigna N°2: Analizar el siguiente sistema y responder las siguientes preguntas
+
+![image](https://hackmd.io/_uploads/rkUuhWKdee.png)
+
+
+a. Según su direccionalidad y características temporales, ¿Qué tipo y modo de transmisión se quieren representar?
+
+> Es la transmision sincronica, la cual segun la imagen es unidireccional en donde ademas de los datos la señal de reloj de esta manera el receptor se sincroniza con el emisor y determina instantes significativos de la señal que recibe, los datos se transmiten de manera consecutiva entre el emisor y el receptor un flujo constante que la determina la señal de sincronismo
+
+b. ¿Es este el mejor paradigma si busco transmitir datos rápidamente y de forma bidireccional?
+
+> No ya que segun el esquema presentado el envio el unidireccional, aunque este tipo de transmision es mas eficiente en la utilizacion del medio de transmisión que la asincronica siendo mas inmune a errores por lo que se suele usar para mayores velocidades que la asincronica
+
+c. En la expresión más simple de señal digital, podemos pensar que un nivel de tensión “1” representa un 1 digital, y un nivel de tensión “0” representa un 0 digital. Con esto en mente, analicemos el siguiente gráfico, que podría representar un tipo de comunicación UART:
+
+![image](https://hackmd.io/_uploads/BJIMa-tdxg.png)
+
+En este caso estamos representando la transmisión del siguiente byte: “00100011”, que en codificación ASCII representa el símbolo “#”. Si quisiéramos transmitir la 4ta letra del nombre de tu grupo, ¿Cómo se vería la señal?
+
+> Nuestro grupo se llama “ComandoDeDatos” por ende la cuarta letra del grupo es “a” que de Ascii a Codificacion binaria representa el numero 01100001 por ende quedaria algo asi la señal representada
+
+![image](https://hackmd.io/_uploads/S1_w6-KOeg.png)
+
+d. Dada la pendiente en los niveles de tensión que podemos ver indicada con flechas en el gráfico de ejemplo. ¿En qué marcas temporales medirían la señal para determinar el valor digital de la misma?
+
+> En las marcas temporales pares como en el ejemplo se pueden ver T0, T2, T4, etc. Osea basicamente, si nosotros trataramos de medir el valor digital en la marcas temporales de la pendiente el valor seria indeterminado por eso se esperaria a que el valor se establezca un poco y donde el valor de tension es claro son en los tiempos Ti-par.
