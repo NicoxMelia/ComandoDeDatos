@@ -137,3 +137,44 @@ En este caso estamos representando la transmisión del siguiente byte: “001000
 d. Dada la pendiente en los niveles de tensión que podemos ver indicada con flechas en el gráfico de ejemplo. ¿En qué marcas temporales medirían la señal para determinar el valor digital de la misma?
 
 > En las marcas temporales pares como en el ejemplo se pueden ver T0, T2, T4, etc. Osea basicamente, si nosotros trataramos de medir el valor digital en la marcas temporales de la pendiente el valor seria indeterminado por eso se esperaria a que el valor se establezca un poco y donde el valor de tension es claro son en los tiempos Ti-par.
+
+### Consigna N°3: Investigar y resumir brevemente los motivos por los cuales no es conveniente transmitir de manera inalámbrica una señal escalonada, como las que vimos en los ejemplos.
+
+No es conveniente transmitir inalámbricamente una señal escalonada porque sus transiciones abruptas generan un espectro muy ancho, con muchas componentes de alta frecuencia. En un canal inalámbrico, estas componentes se atenúan o distorsionan debido al efecto de filtrado del medio, lo que degrada la forma de la señal y aumenta la probabilidad de error. Además, el exceso de ancho de banda puede violar regulaciones y provocar interferencias con otros sistemas. Por ello, se emplean técnicas de modulación y filtrado que adaptan la señal digital al canal. 
+
+### Con esto en mente, analizar el siguiente gráfico de ejemplo y responder las preguntas a continuación.
+
+
+![image](https://hackmd.io/_uploads/B1jgRZFuge.png)
+
+a. ¿Qué técnica de modulación se está representando?
+
+> Es modulacion PSK, en donde se tiene un señal cuadrado que representa un byte entonces al modularla PSK cuando se cambia de 0 a 1 o de 1 a 0 habra un cambio de fase y en esos cambios de fase se encuentra la informacion. Es una forma de modulación angular que consiste en hacer variar la fase de la portadora entre un número determinado de valores discretos.
+
+b. ¿Cómo se vería la siguiente señal digital modulada?
+
+> Veriamos la señal digital modulada de la siguiente forma
+![image](https://hackmd.io/_uploads/HJYLA-Kdll.png)
+
+c. ¿Qué otras técnicas de modulación basadas en los mismos principios existen?
+
+> Tecnicas como ASK y FSK, donde ASK modula en amplitud y FSK en frecuencia, sigue un principio parecido debido a que los cambios de amplitud ASK y en frecuencia FSK representa los cambios entre esos valores discretos(0 y 1).
+
+d. ¿Qué es el Bit Error Rate (BER)?. En términos de BER, ¿Cuál de las técnicas de modulación presentadas anteriormente tiene mejores prestaciones?
+
+> El BER (Bit Error Rate) es la tasa de error de bit, es decir, la proporción de bits recibidos incorrectamente respecto al total de bits transmitidos.
+>
+>$$BER = \frac{Bits_e}{Bits_t}$$
+> Sirve para medir la calidad de un enlace: cuanto más bajo es el BER, mejor es la fiabilidad de la comunicación.
+>
+> #### ASK (Amplitude Shift Keying):
+> - Muy sensible al ruido y a variaciones de amplitud (fading).
+> - Peor BER en entornos inalámbricos ruidosos.
+>
+> #### FSK (Frequency Shift Keying):
+> - Más robusta que ASK frente a ruido en amplitud, porque la información está en la frecuencia.
+> - BER mejor que ASK en la mayoría de los canales inalámbricos, pero requiere más ancho de banda.
+>
+> #### PSK (Phase Shift Keying):
+> - Robusta al ruido en amplitud, ya que codifica en la fase de la portadora.
+> - En canales con buena sincronización, BPSK ofrece el mejor BER de las tres para una misma relación señal/ruido (SNR).
