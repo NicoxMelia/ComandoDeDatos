@@ -178,3 +178,68 @@ d. ¿Qué es el Bit Error Rate (BER)?. En términos de BER, ¿Cuál de las técn
 > #### PSK (Phase Shift Keying):
 > - Robusta al ruido en amplitud, ya que codifica en la fase de la portadora.
 > - En canales con buena sincronización, BPSK ofrece el mejor BER de las tres para una misma relación señal/ruido (SNR).
+
+
+### Consigna N°4: Simulación con el Cisco Packet Tracer:
+> a) Router inalambrico en el workspace:
+![image](https://hackmd.io/_uploads/Bkv72ftOeg.png) 
+> b) Configuracion requerida para el router: 
+![image](https://hackmd.io/_uploads/HyKi2ftOel.png)
+![image](https://hackmd.io/_uploads/rJhmTGFdxe.png)
+
+> c) Podemos observar que la frecuencia de operación del router es de 2.437 GHz. Que corresponde a la region del espectroelectromagnetico aplicado a comunicaciones inalambricas. Esta banda de frecuencia corresponde a la región de frecuencias super altas (SHF).
+![image](https://hackmd.io/_uploads/rkmxWZqdgg.png)
+![image](https://hackmd.io/_uploads/HkNxM-cdle.png)
+[](URL)
+
+![image](https://hackmd.io/_uploads/HyJSYW9Oxx.png)
+
+Y segun el ITU la esa frecuencia seria de banda 9 perteneciente a las ondas decimetricas.
+
+> d) PC configurada con DHSP (Dynamic Host Configuration Protocol) activado:
+![image](https://hackmd.io/_uploads/BkS3j-qOel.png)
+
+> e) Laptop con placa Wi-Fi colocada:
+![image](https://hackmd.io/_uploads/HyB1-M9Oge.png)
+
+> f) Laptop conectada al router de forma inalambrica:
+![image](https://hackmd.io/_uploads/r1ggfzc_lg.png)
+
+> g) Comprobacion de conectividad de Laptop y PC mediante el uso del router:
+
+> #### Laptop:
+> * IPv4_Address: 192.168.0.102 
+> * Subnet_Mask: 255.255.255.0
+> #### PC: 
+> * IPv4_Address: 192.168.0.101
+> * Subnet_Mask: 255.255.255.0
+
+> Conexion PC -> Laptop:
+![image](https://hackmd.io/_uploads/Hkv9_Gc_ee.png)
+
+> Conexion Laptop -> PC:
+![image](https://hackmd.io/_uploads/HJ63jzcdeg.png)
+
+> h) Testeando conexión Wi-Fi a distancia del router:
+> ![image](https://hackmd.io/_uploads/ryeZ7UcOee.png)
+>
+> ![image](https://hackmd.io/_uploads/SJjuWUcdgg.png)
+> ![image](https://hackmd.io/_uploads/rkYXzIc_ge.png)
+>
+>
+> Se observa que la señal recibida por la laptop disminuye conforme aumenta la distancia al router. Esto se debe a que la potencia emitida por el router se atenúa siguiendo aproximadamente la ley del cuadrado inverso, dado que la propagación de la señal es omnidireccional (similar a una esfera). Este es uno de los factores principales de pérdida de señal.
+>
+> Además, la onda electromagnética sufre atenuación adicional al atravesar distintos medios, como por ejemplo el oxígeno, el dióxido de carbono o las paredes de una vivienda. En este caso, parte de la energía se refleja y otra parte se transmite, reduciendo aún más la potencia recibida.
+>
+> Estos factores afectan directamente la velocidad de transmisión de datos. Por ejemplo, si el router utiliza la banda de 5 GHz, un equipo cercano podrá alcanzar mayores velocidades que en 2,4 GHz; sin embargo, a distancias mayores la señal de 5 GHz se degrada más rápido, pudiendo llegar a impedir la conexión. Esto ocurre porque las frecuencias más altas interactúan más con el medio ambiente y se atenúan más que las bajas frecuencias.
+
+## Conclusiones
+A través de este trabajo se comprendió la relación entre las propiedades físicas de las ondas electromagnéticas y su impacto en las comunicaciones digitales. Se verificó que la modulación es clave para adaptar señales al medio y que fenómenos como la atenuación limitan el alcance y la calidad de transmisión, especialmente en enlaces inalámbricos.
+La simulación en Packet Tracer permitió evidenciar de manera práctica cómo los parámetros de configuración y las condiciones del entorno afectan el rendimiento de una red Wi-Fi. En conclusión, el trabajo fortaleció el vínculo entre la teoría de la capa física y su aplicación en sistemas reales, sentando bases sólidas para el análisis y diseño de redes modernas.
+
+> ### Bibliografia y referencias
+>
+> * [Stallings, W. (2004). Comunicaciones y redes de computadores (7ª ed.). Pearson Prentice Hall.](https://drive.google.com/file/d/14wtpr0_eigALENVraeLnF5faYEM4aQB9/view?usp=drive_link)
+> * [Ley del cuadrado inverso (propagación esférica)](https://en.wikipedia.org/wiki/Free-space_path_loss?)
+> * [Uso del Espectro Electromagnético hasta los 6 GHz y las Tecnologías Asociadas](https://ipstore.cl/blogs/telecomunicaciones/uso-del-espectro-electromagnetico-hasta-los-6-ghz-y-las-tecnologias-asociadas?srsltid=AfmBOop0UsU0E19IUlERO1L27XLjP2e1KkC5Ge3WAhU7EvYj_MuDAwm1)
+> * [Atenuación por materiales y obstáculos](https://www.shure.com/en-US/insights/all-about-wireless-wave-propagation)
