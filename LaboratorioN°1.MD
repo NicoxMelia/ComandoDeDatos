@@ -182,7 +182,9 @@ d. ¿Qué es el Bit Error Rate (BER)?. En términos de BER, ¿Cuál de las técn
 
 ### Consigna N°4: Simulación con el Cisco Packet Tracer:
 > a) Router inalambrico en el workspace:
+
 ![image](https://hackmd.io/_uploads/Bkv72ftOeg.png) 
+
 > b) Configuracion requerida para el router: 
 ![image](https://hackmd.io/_uploads/HyKi2ftOel.png)
 ![image](https://hackmd.io/_uploads/rJhmTGFdxe.png)
