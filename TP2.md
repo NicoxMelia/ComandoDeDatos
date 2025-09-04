@@ -60,7 +60,7 @@ _enzo.laura.surco@mi.unc.edu.ar;_
 >  
 > Como el `Efecto Doppler` a velocidades de avion complica la sincronización y el enlace celular ademas para mantener la conexión el equipo puede aumentar potencia elevando el riesgo de interferencias.
 >
-> ### Consigna N°2: Analizar la siguiente figura y responder:
+### Consigna N°2: Analizar la siguiente figura y responder:
 ![image](https://hackmd.io/_uploads/rkNx5iQ5ge.png)
 
 a. ¿Qué fenómeno físico se está representando en la Figura? ¿Cuáles son las características principales del mismo?
