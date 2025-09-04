@@ -58,4 +58,26 @@ _enzo.laura.surco@mi.unc.edu.ar;_
 > 
 > Los telefonos buscan constantemente señal de las antenas terrestres y sus ondas pueden interferir con las comunicaciones de radio entre el avion y la torre de control.
 >  
-> Como el `Efecto Doppler` a velocidades de avion complica la sincronización y el enlace celular ademas para mantener la conexión el equipo puede aumentar potencia elevando el riesgo de interferencias. 
+> Como el `Efecto Doppler` a velocidades de avion complica la sincronización y el enlace celular ademas para mantener la conexión el equipo puede aumentar potencia elevando el riesgo de interferencias.
+>
+> ### Consigna N°2: Analizar la siguiente figura y responder:
+![image](https://hackmd.io/_uploads/rkNx5iQ5ge.png)
+
+a. ¿Qué fenómeno físico se está representando en la Figura? ¿Cuáles son las características principales del mismo?
+> El fenómeno físico representado es la interferencia o ruido en la señal. Se trata de perturbaciones que se superponen a la señal original y alteran su comportamiento. Estas perturbaciones pueden tener distintos orígenes: naturales (como rayos, descargas eléctricas o radiación cósmica), artificiales (provenientes de equipos electrónicos, motores o herramientas eléctricas) e incluso ambientales (ruidos y vibraciones presentes en el entorno).
+>
+>La presencia de este fenómeno afecta directamente la calidad de la comunicación, haciendo que la señal transmitida llegue al receptor menos clara, distorsionada o, en algunos casos, completamente ilegible. En la figura se observa cómo una señal limpia experimenta estas alteraciones debido a una fuente de ruido externa representada por el trabajador con una herramienta eléctrica.
+
+b. Recordando las bandas de transmisión vistas en el TP01, investigar: ¿A qué tipos de transmisión afecta más este fenómeno? ¿Cuáles son más resilientes al mismo?
+
+>![image](https://hackmd.io/_uploads/BJd1pim5ge.png)
+> Observando la tabla de bandas de frecuencias, podemos notar que los tipos de transmisión más afectados son aquellos que utilizan bandas de frecuencias bajas, como la radio AM o las comunicaciones submarinas. Esto se debe a que sus longitudes de onda coinciden con las generadas por fenómenos naturales como rayos, tormentas eléctricas y descargas atmosféricas, que producen impulsos eléctricos intensos. Como resultado, el ruido atmosférico se acopla fácilmente a las ondas de baja frecuencia. En cambio, las bandas de frecuencia altas son más resilientes al ruido ambiente, como comunicaciones satelitales o Redes 5G, por lo que resultan más confiables en entornos donde la interferencia natural es significativa, aunque presentan sus propias limitaciones relacionadas con la atenuación y la necesidad de mantener línea de vista.
+
+c. ¿Qué es la SNR? ¿Tiene algo que ver con el concepto de BER que vimos en el TP01?
+> La relación señal-ruido (SNR) y la tasa de bits errados (BER) están íntimamente ligadas: un SNR más alto generalmente se traduce en un BER más bajo. En el caso de la modulación BPSK en un canal con desvanecimiento de Rayleigh, la función Q se utiliza para calcular el BER a partir del SNR. Esto significa que a medida que la calidad de la señal mejora (mayor SNR), la cantidad de errores en la transmisión de datos disminuye, logrando una comunicación más confiable.
+> 
+> La distancia es un factor crucial que afecta directamente el SNR. A medida que la distancia entre el transmisor y el receptor aumenta, la intensidad de la señal recibida disminuye debido a la pérdida de trayectoria. En el espacio libre, esta pérdida es típicamente proporcional al cuadrado de la distancia, lo que significa que un aumento en la distancia resulta en una reducción significativa del SNR.
+> 
+> La relación entre BER, SNR y distancia es clara: a mayor distancia, el SNR disminuye debido a la pérdida de trayectoria, lo que a su vez causa un aumento en el BER. En otras palabras, si la potencia de transmisión es fija, una mayor distancia resultará en un BER más alto debido al menor SNR recibido.
+> 
+> Sin embargo, hay otros factores que influyen en esta relación. El esquema de modulación es uno de ellos, ya que distintos esquemas tienen sensibilidades variadas a los cambios en el SNR. Por ejemplo, QAM es generalmente más sensible que BPSK, lo que significa que su BER aumentará más rápidamente con la disminución del SNR. Las características del canal, como la severidad del desvanecimiento, la propagación multitrayectoria y la interferencia, también pueden impactar esta relación. Un canal ruidoso o con un alto desvanecimiento puede amplificar el aumento del BER, incluso si la distancia y el SNR se mantienen constantes en comparación con un canal más limpio.
