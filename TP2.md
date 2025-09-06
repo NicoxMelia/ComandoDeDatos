@@ -81,3 +81,145 @@ c. ¿Qué es la SNR? ¿Tiene algo que ver con el concepto de BER que vimos en el
 > La relación entre BER, SNR y distancia es clara: a mayor distancia, el SNR disminuye debido a la pérdida de trayectoria, lo que a su vez causa un aumento en el BER. En otras palabras, si la potencia de transmisión es fija, una mayor distancia resultará en un BER más alto debido al menor SNR recibido.
 > 
 > Sin embargo, hay otros factores que influyen en esta relación. El esquema de modulación es uno de ellos, ya que distintos esquemas tienen sensibilidades variadas a los cambios en el SNR. Por ejemplo, QAM es generalmente más sensible que BPSK, lo que significa que su BER aumentará más rápidamente con la disminución del SNR. Las características del canal, como la severidad del desvanecimiento, la propagación multitrayectoria y la interferencia, también pueden impactar esta relación. Un canal ruidoso o con un alto desvanecimiento puede amplificar el aumento del BER, incluso si la distancia y el SNR se mantienen constantes en comparación con un canal más limpio.
+
+### Consigna N°3: 
+
+>a. Ethernet es una familia de tecnologías de red de capa de enlace (IEEE 802.3) para LAN. Define las características de cableado y señalización; de nivel físico y los formatos de tramas de datos del nivel de enlace de datos del modelo OSI.
+
+> Es una de las tecnologías de red más utlizadas para las redes locales, y sus características son las siguientes:
+
+>1. Velocidad y escalabilidad
+Ethernet admite múltiples opciones de velocidad, que van desde 10 Mbps hasta 800 Gbps. Permite satisfacer las crecientes demandas de ancho de banda.
+>2. Conectividad por cable para la estabilidad
+Proporciona una conexión estable y de baja latencia, ideal para aplicaciones de juegos, videoconferencias y aplicaciones intensivas en datos.
+>3. Comunicación completa Duplex y Half Duplex
+Ethernet permite a los dispositivos enviar y recibir datos simultáneamente o permite la transferencia de datos en una sola dirección.
+>4. Manipulación de colisión
+Para gestionar el tráfico de la red, Ethernet utiliza el acceso múltiple sentido del portaaviones con la detección de colisiones (CSMA/CD), y detecta y evita la colisión de paquetes, que mejora la eficiencia de la red.
+>5. Comunicación Basada en bolsillo
+Para transmitir los datos, Ethernet lo divide en marcos, lo que garantiza una entrega de datos eficiente y fiable.
+
+> Ethernet tambien cuenta con:
+> + Direcciones MAC de 48 bits (hex).
+>+ Tramas con campos fijos (ver abajo).
+>+ MTU típica 1500 bytes (tamaño total de trama ≈ 1518 sin contar preámbulo/FCS en captura).
+>+ Funciona en medios cobre (UTP), fibra, radio (sobre 802.11 es Wi-Fi).
+
+
+>La estructura interna de una trama Ethernet se especifica en la norma IEEE 802.3.
+
+>![image](https://hackmd.io/_uploads/Sy-2Asm9el.png)
+
+>**Estructura de una trama Ethernet II:**
+
+> ![image](https://hackmd.io/_uploads/rJOTS2X5gx.png)
+
+
+**Diferencias: Ethernet / Fast Ethernet / Gigabit**
+
+>**Ethernet (10BASE-T):** 10 Mb/s, UTP Cat3/5.
+
+
+>**Fast Ethernet (100BASE-TX):** 100 Mb/s, UTP Cat5 (mejor Cat5e).
+
+
+>**Gigabit Ethernet (1000BASE-T):** 1 Gb/s, UTP Cat5e/Cat6 (recomendado). (La trama a nivel 2 es la misma; cambia velocidad/codificación/medio.)
+
+**b. Cable UTP derecho vs cruzado** 
+>**UTP (Unshielded Twisted Pair)**:Consiste en cuatro pares de hilos de cobre aislados y trenzados entre sí, par trenzado sin blindaje; los trenzados reducen interferencia y diafonía. Categorías (Cat5e, Cat6…) determinan hasta qué velocidad/frecuencia soporta (relación con a)).
+
+>**Derecho (straight-through) vs cruzado (crossover):**
+
+>**Derecho**: mismo orden de colores en ambos extremos (p. ej., T568B–T568B). Tradicional para PC ↔ switch.
+
+
+>**Cruzado**: extremos diferentes (T568A–T568B). Tradicional para PC ↔ PC o switch ↔ switch sin uplink.
+
+
+>Hoy casi todas las NIC/switches tienen auto MDI-X, así que cualquiera suele funcionar, pero derecho es el estándar.
+
+
+
+
+
+**c) Conectado a internet, averiguar la puerta de enlace predeterminada de tu conexión (podés utilizar
+ipconfig en la línea de comandos en Windows, ifconfig en Linux, o acceder a las opciones de
+conexión de tu dispositivo). Luego, en wireshark, filtrar los paquetes de esa dirección IP (Ayuda:
+podés utilizar el filtro ip.addr == <dirección>). Ejecutar una función ping en la línea de
+comandos hacia la puerta de enlace, monitorear Wireshark y extraer alguno de los paquetes
+recibidos. Extraer y documentar en el informe los datos de este paquete, en formato hexadecimal.**
+
+> Desde la terminal se hace ipconfig para averiguar la puerta de enlace predeterminada la cual como podemos apreciar es: 192.168.100.1 
+
+> ![image](https://hackmd.io/_uploads/rJbclnQqgl.png)
+
+
+> Se copia esa direccion al wireshark para apreciar la captura
+
+> ![image](https://hackmd.io/_uploads/HJing3X5eg.png)
+
+> Filtramos en la seccion superior con el IP del gateway
+
+> ![image](https://hackmd.io/_uploads/SkApe2X9xl.png)
+
+> Desde la terminal escribo el comando "ping" para el envio de paquetes hacia esa direccion IP del gateway. recibiendo exitosamente los paquetes sin ninguna perdida en el medio.
+
+> ![image](https://hackmd.io/_uploads/S1DgWnQqgl.png)
+
+> Con el filtro aplicado y los paquetes enviados y recibidos podemos visualizar en el wireshark esos paquetes y su respectiva respuesta
+ 
+> ![image](https://hackmd.io/_uploads/ryY-ZnXqge.png)
+
+> Se decide seleccionar el ultimo paquete "echo reply" para su analisis
+
+> ![image](https://hackmd.io/_uploads/ByaXZhQ9gg.png)
+
+> Los datos del paquete de ese paquete en formato hexadecimal es el siguiente: 98541b494cc460d7553bf82308004500003c7deb00004001b312c0a86401c0a864710000554b000100106162636465666768696a6b6c6d6e6f7071727374757677616263646566676869
+
+**d) Extraer de la información del punto anterior la dirección MAC del dispositivo. Documentar la
+misma e investigar datos del fabricante en internet (utilizar servicios online como este).
+Documentar el nombre y dirección de la empresa.**
+
+>  Visualizando nuestra direccion MAC source and destination:
+
+>![image](https://hackmd.io/_uploads/BJl8b2X5ll.png)
+
+> Utilizando los primeros 3 hexadecimales del Mac del source y visualizandolo en la pagina podemos observar los datos del fabricante: 
+
+> ![image](https://hackmd.io/_uploads/ByqvZhQcee.png)
+
+> La misma es Huawei
+
+
+**e) Repetir los ejercicios c) y d), pero comunicándote con la computadora de un compañero/a.**
+
+> Para esta consigna se usaron dos notebooks conectadas al mismo router. En una de las notebook desde la terminal se hace ipconfig para averiguar la direccion IP la cual como podemos apreciar es: 192.168.0.141 
+>
+>![Imagen de WhatsApp 2025-09-01 a las 21.56.20_65ab0d81](https://hackmd.io/_uploads/BJbb-p7cge.jpg)
+> Se copia esa direccion al wireshark para apreciar la captura
+> ![image](https://hackmd.io/_uploads/H1uzVTXcee.png)
+> Filtramos en la seccion superior con el IP de la notebook receptora.
+> ![image](https://hackmd.io/_uploads/SJTLmaQcxl.png)
+> Desde la terminal escribo el comando "ping" para el envio de paquetes hacia esa direccion IP de la notebook receptora. Recibiendo exitosamente los paquetes sin ninguna perdida en el medio.
+>
+>![Imagen de WhatsApp 2025-09-01 a las 21.56.20_e6b93b8d](https://hackmd.io/_uploads/BydeWaQcex.jpg)
+>
+> Con el filtro aplicado y los paquetes enviados y recibidos podemos visualizar en el wireshark esos paquetes y su respectiva respuesta
+>
+>![image](https://hackmd.io/_uploads/H1CHVTQ5lx.png)
+>
+> Se decide seleccionar el ultimo paquete "echo reply" para su analisis
+>![image](https://hackmd.io/_uploads/SkZF4T79gx.png)
+>
+> Los datos del paquete de ese paquete en formato hexadecimal es el siguiente:
+> b8 03 05 78 bb 67 3c 6a d2 dd 69 6a 08 00 45 00
+  00 3c 57 65 00 00 80 01 60 90 c0 a8 00 ee c0 a8
+  00 8d 00 00 55 33 00 01 00 28 61 62 63 64 65 66
+  67 68 69 6a 6b 6c 6d 6e 6f 70 71 72 73 74 75 76
+  77 61 62 63 64 65 66 67 68 69
+>
+>  Visualizando nuestra direccion MAC source and destination:
+>![image](https://hackmd.io/_uploads/S1xhmSTQcgl.png)
+> Utilizando los primeros 3 hexadecimales del Mac del source y visualizandolo en la pagina podemos observar los datos del fabricante: 
+>![image](https://hackmd.io/_uploads/SyPCSpQcll.png)
+> La misma es TP-LINK Sytems Inc la fabricante de la notebook emisora.
