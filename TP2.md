@@ -5,18 +5,21 @@ _Pablo Castilla; Javier A. Fatu; Enzo L. Laura Surco; Nicolás O. Melia; Saqib D
 
 
 **ComandoDeDatos**
+
 **Facultad de Ciencias Exactas, Físicas y Naturales**
+
 **Asignatura: Comunicaciones de datos**
+
 **Profesores: Facundo Oliva Cuneo y Santiago Martin Henn**
 
 ### Informacion de los autores
 
- **Información de contactos**:
-_saqib.mohammad@mi.unc.edu.ar;_
-_javier.fatu@mi.unc.edu.ar;_
-_nicolas.melia@mi.unc.edu.ar;_
-_pablo.castilla@mi.unc.edu.ar;_
-_enzo.laura.surco@mi.unc.edu.ar;_
+ **Información de contactos**:   
+_saqib.mohammad@mi.unc.edu.ar;_     
+_javier.fatu@mi.unc.edu.ar;_  
+_nicolas.melia@mi.unc.edu.ar;_  
+_pablo.castilla@mi.unc.edu.ar;_  
+_enzo.laura.surco@mi.unc.edu.ar;_  
 
 ## Resumen
 > Este informe esta centrado en los conceptos fundamentales de las capas física y de enlace de datos del modelo OSI. Se analizan fenómenos físicos como la atenuación y la distorsión por retardo, su impacto en las transmisiones según el tipo de banda, y se introduce el uso de Wireshark para el análisis de tráfico de red. Además, se investigan aspectos prácticos como la estructura de tramas Ethernet, tipos de cables UTP, y la trazabilidad de direcciones MAC. Finalmente, se reflexiona sobre la privacidad en red y el rol de tecnologías como las VPNs en la ocultación de información del dispositivo.
@@ -223,3 +226,35 @@ Documentar el nombre y dirección de la empresa.**
 > Utilizando los primeros 3 hexadecimales del Mac del source y visualizandolo en la pagina podemos observar los datos del fabricante: 
 >![image](https://hackmd.io/_uploads/SyPCSpQcll.png)
 > La misma es TP-LINK Sytems Inc la fabricante de la notebook emisora.
+> 
+
+### Consigna N°4: 
+
+**a) Según los resultados obtenidos en este trabajo práctico y la información que obtengan de internet, elaborar conclusiones acerca de la privacidad de un dispositivo en la red y la trazabilidad de una dirección MAC.**
+
+> Durante las capturas realizadas en Wireshark se observo que cada trama lleva informacion sensible como la direccion IP y la direccion MAC, esto significa que un observador dentro de la misma red local puede identificar otros dispositivos conectados, que IP utilizan y a que destino se comunica. La privacidad de una red depende en gran medida de la seguridad aplicada (uso de cifrado, VPN, etc). La misma direccion MAC es unica para cada tarjeta de red y esta grabada de fabrica, los 3 primeros 3 pares hexadecimales identifican al fabricante del dispositivo; lo cual permite rastrear de donde proviene un dispositivo y en combinacion con registros de red y te permite identificar a que usuario corresponde sin embargo la MAC solo es visible dentro de una red local.
+
+**b) Investigar que es el IMEI y qué similitud tiene con la dirección MAC**
+
+> El IMEI (International Mobile Equipment Identity) es un identificador único que poseen los teléfonos móviles y que los operadores utilizan para registrar y bloquear dispositivos. La similitud con la dirección MAC es que ambos son identificadores únicos de hardware que permiten reconocer un dispositivo en una red. La principal diferenica es que la MAC se usa en redes locales (LAN/WiFi), mientras que el IMEI se usa en redes celulares (GSM/4G/5G).
+
+
+**c) Investigar e incluir una respuesta al siguiente interrogante: ¿Una VPN oculta la dirección MAC del dispositivo?**
+
+> No. Una VPN oculta la dirección IP pública, cifrando y tunelizando el tráfico a través de un servidor intermedio. La dirección MAC no viaja más allá de la red local; solo es visible hasta el router o switch de la red. Por lo tanto, la VPN no oculta la MAC, porque esta nunca se transmite a través de internet, pero tampoco impide que sea vista por otros equipos dentro de la misma red local.
+
+
+## Conclusion
+
+> Este trabajo permitió comprender cómo distintos factores físicos y técnicos afectan directamente la calidad de una red. Fenómenos como el efecto Doppler o el ruido no son solo teoría: influyen en cómo se transmiten los datos. También se vio cómo tecnologías como Ethernet y Wi-Fi requieren configuraciones específicas para funcionar bien y de forma segura.
+
+> Además, herramientas como Wireshark mostraron que en una red local circula mucha información sensible, como direcciones IP y MAC, lo que abre la puerta a posibles riesgos si no se toman medidas. En resumen, el trabajo ayudó a conectar la teoría con la práctica, y a valorar la importancia de entender cómo funcionan las redes para poder usarlas y protegerlas mejor.
+
+
+## Bibliografia y referencias
+>
+> * [Stallings, W. (2004). Comunicaciones y redes de computadores (7ª ed.). Pearson Prentice Hall.](https://drive.google.com/file/d/14wtpr0_eigALENVraeLnF5faYEM4aQB9/view?usp=drive_link)
+> * [Radar Doppler](https://es.wikipedia.org/wiki/Radar_Doppler)
+> * [El desvanecimiento de Rayleigh](https://en.wikipedia.org/wiki/Rayleigh_fading)
+> * [What is the relation between Bit Error Rate (BER), distance d and SNR(dB)? - MATLAB Community](https://au.mathworks.com/matlabcentral/answers/2068346-what-is-the-relation-between-bit-error-rate-ber-distance-d-and-snr-db)
+> * [What is my IP address](https://whatismyipaddress.com/)
