@@ -15,11 +15,11 @@ _Pablo Castilla; Javier A. Fatu; Enzo L. Laura Surco; Nicolás O. Melia; Saqib D
 ### Informacion de los autores
 
  **Información de contactos**:
-_saqib.mohammad@mi.unc.edu.ar;_
-_javier.fatu@mi.unc.edu.ar;_
-_nicolas.melia@mi.unc.edu.ar;_
 _pablo.castilla@mi.unc.edu.ar;_
+_javier.fatu@mi.unc.edu.ar;_
 _enzo.laura.surco@mi.unc.edu.ar;_
+_nicolas.melia@mi.unc.edu.ar;_
+_saqib.mohammad@mi.unc.edu.ar;_
 
 
 ## Resumen
@@ -318,5 +318,6 @@ a) Investigar qué tecnologías permiten esto y sus principales características
 
 ## Bibliografia y referencias
 
->* [Fuentes de cada protocolo inalambrico del inciso 3](https://hackmd.io/Nhs-WJFkQdquZ28oTaQX9w?both=#Tabla-comparativa-de-protocolos-inal%C3%A1mbricos)
+>* [Fuentes de cada protocolo inalambrico del inciso 3](#tabla-comparativa-de-protocolos-inalámbricos)
+>* [Archivo utilizado para hacer el grafico de Data Rate vs Distance](https://colab.research.google.com/drive/1h3gybwqTdVRkLG7jF2H0ILKiRf2Pg8ry?usp=sharing)
 >* [¿Los aviones tienen wifi? Todo lo que debes saber](https://es.t-mobile.com/dialed-in/wireless/how-does-airplane-wifi-work)
