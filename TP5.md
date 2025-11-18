@@ -24,19 +24,38 @@ _saqib.mohammad@mi.unc.edu.ar;_
 
 ## Resumen
 
+Este informe detalla el diseño, implementación y análisis de un sistema de comunicaciones para el Internet de las Cosas (IoT) basado en el protocolo MQTT. El objetivo fue construir y evaluar una arquitectura completa, desde la simulación de dispositivos (sensores y actuadores) hasta la recolección, almacenamiento y visualización de datos en la nube.
 
+Se utilizó un broker MQTTS gestionado (HiveMQ Cloud) como intermediario central. Se desarrollaron clientes en Python con la biblioteca paho-mqtt para simular patrones de comunicación Publish/Subscribe, incluyendo direccionamiento 1-a-1 y broadcast. La arquitectura se completó con un gateway que persiste los datos en archivos CSV y los expone a Prometheus, para su posterior visualización en un dashboard de Grafana.
+
+El análisis de la arquitectura incluyó una inspección de paquetes con Wireshark, que confirmó la confidencialidad de los datos gracias al cifrado de TLS (MQTTS). El estudio concluye validando la flexibilidad y eficiencia del modelo Pub/Sub para IoT, al tiempo que identifica la dependencia de un broker central como un punto único de falla (SPOF) crítico en el diseño del sistema.
 
 ## Introducción
 
+En el contexto actual del Internet de las Cosas (IoT), la comunicación eficiente entre un número masivo de dispositivos con recursos limitados es un desafío fundamental. Los protocolos de comunicación tradicionales, como HTTP, no son siempre adecuados debido a su alto consumo de recursos y su modelo de solicitud-respuesta.
+
+El protocolo MQTT (Message Queuing Telemetry Transport) se ha establecido como el estándar de facto para la mensajería en IoT. Su ligereza, bajo overhead y, fundamentalmente, su arquitectura Publish/Subscribe (Pub/Sub), lo hacen ideal para redes con ancho de banda limitado o conexiones inestables.
+
+El objetivo de este trabajo práctico es ir más allá de la teoría y construir una solución de IoT funcional de extremo a extremo (end-to-end). Se implementará un ecosistema completo que simula la recolección de datos de sensores, su envío seguro a un broker en la nube, el procesamiento a través de un gateway, y su visualización final en un dashboard de tiempo real.
+
+A lo largo de este informe, se documentará la configuración del broker, el desarrollo de los clientes Python, la implementación de diferentes lógicas de comunicación (1-a-1 y broadcast), la captura de datos y, finalmente, un análisis crítico de la arquitectura, sus protocolos de transporte (TCP/TLS) y sus implicaciones en términos de seguridad y disponibilidad.
 
 
-## Metodologia
+## Metodología
 
+El trabajo se implementó en fases incrementales, combinando la configuración de servicios en la nube con el desarrollo de clientes y el análisis de red.
 
+Las herramientas clave fueron:
+* **Broker:** **HiveMQ Cloud** (para MQTTS seguro en el puerto 8883).
+* **Clientes:** **Python** (con la biblioteca `paho-mqtt`).
+* **Análisis de Red:** **Wireshark**.
+* **Visualización:** **Grafana** (conectado a **Prometheus** y archivos **CSV**).
 
-
-
-
+El proceso siguió estos pasos:
+1.  **Configuración:** Despliegue del *broker* en HiveMQ Cloud y generación de credenciales.
+2.  **Simulación:** Desarrollo de scripts en Python para probar la conexión (Ejercicio 3) y simular patrones de comunicación 1-a-1 y 1-a-N (*broadcast*) (Ejercicio 4).
+3.  **Implementación del Pipeline:** Creación de un *gateway* para recolectar datos de sensores, persistirlos en CSV y exponerlos a Grafana/Prometheus (Ejercicio 5).
+4.  **Análisis:** Captura de tráfico con Wireshark para verificar el cifrado MQTTS (Ejercicio 5e) y análisis teórico de la arquitectura (Ejercicio 6).
 
 ## Resultados
 
@@ -511,16 +530,6 @@ Si hay cientos o miles de sensores:
 
 **En resumen:**
 El broker central facilita todo, pero introduce dependencia absoluta. En ingeniería eso implica planificar redundancia o brokers distribuidos si la escala crece.
-
-## Conclusiones
-
-Aquí tienes una propuesta de conclusiones basada en el excelente trabajo que han realizado:
-
----
-
-## Conclusiones
-
-Aquí tienes una propuesta de conclusiones más directa y con un tono menos formal:
 
 ---
 
